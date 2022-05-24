@@ -1,0 +1,20 @@
+package Collections;
+
+public class Student {
+
+		int registerNo;
+		String name;
+		int age;
+		long phoneNo;
+		
+		Student(int registerNo,String name,int age,long phoneNo){
+			this.registerNo=registerNo;
+			this.name=name;
+			this.age=age;
+			this.phoneNo=phoneNo;
+		}
+	
+		
+	
+
+}

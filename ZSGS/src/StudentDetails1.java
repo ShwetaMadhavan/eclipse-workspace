@@ -55,24 +55,7 @@ public class StudentDetails1 {
 		this.registerNo = registerNo;
 	}
 
-	public void print() {
-		// TODO Auto-generated method stub
-		Scanner sc=new Scanner(System.in);
-		name=sc.next();
-		System.out.println("Name : "+name);
-		age=sc.next();
-		System.out.println("Age : "+age);
-		email=sc.next();
-		System.out.println("email : "+email);
-		gender=sc.next();
-		System.out.println("gender : "+gender);
-		phoneNo=sc.next();
-		System.out.println("phoneno : "+phoneNo);
-		registerNo=sc.next();
-		System.out.println("registerno : "+registerNo);
-		
-		
-		
+	public StudentDetails1() {
 		
 	}
 

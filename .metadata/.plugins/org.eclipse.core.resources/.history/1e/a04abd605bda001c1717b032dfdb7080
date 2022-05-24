@@ -1,0 +1,43 @@
+package collectionsAssignment;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class StudentArrayList {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		ArrayList<PojoArrayList> s=new ArrayList<PojoArrayList>();
+		
+		
+		String str="";
+		int rollNo=101;
+		System.out.println("Student Details");
+		do {
+			PojoArrayList ar=new PojoArrayList();
+			ar.setRollNo(rollNo++);
+			System.out.println("Enter Student Name");
+			ar.setName(sc.next());
+			System.out.println("Enter Student Age");
+			ar.setAge(sc.nextInt());
+			System.out.println("Enter Student Marks");
+			ar.setMark(sc.nextDouble());
+			
+			s.add(ar);
+			
+			System.out.println("Do you want to Add Student Details?");
+			str=sc.nextLine();
+		}while(str.equals("YES"));
+		
+		for(PojoArrayList obj:s) {
+			System.out.println("RollNo : "+obj.getRollNo());
+			System.out.println("Name : "+obj.getName());
+			System.out.println("Age : "+obj.getAge());
+			System.out.println("Mark : "+obj.getMark());
+		}
+		
+
+	}
+
+}

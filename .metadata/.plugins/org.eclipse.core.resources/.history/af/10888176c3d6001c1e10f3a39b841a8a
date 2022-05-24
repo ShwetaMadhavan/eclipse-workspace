@@ -1,0 +1,28 @@
+package Collections;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class DemoArrayList2 {
+	
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		ArrayList<Student> stu=new ArrayList<Student>();
+		stu.add(new Student(101,"Cho",21,684685740));
+		stu.add(new Student(102,"Cedric",23,74848494));
+		
+		System.out.println(s);
+		
+		for(Student s:stu) {
+			System.out.println(s);
+		}
+		
+		
+
+	}
+	
+	
+
+}

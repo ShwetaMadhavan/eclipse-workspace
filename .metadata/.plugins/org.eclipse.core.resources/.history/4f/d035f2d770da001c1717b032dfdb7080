@@ -1,0 +1,136 @@
+package collectionsAssignment;
+
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.Iterator;
+import java.util.Scanner;
+import java.util.stream.Collectors;
+
+public class StudentArrayList {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		ArrayList<PojoArrayList> s=new ArrayList<PojoArrayList>();
+		
+		
+		String str="";
+		String str1="";
+		int rollNo=101;
+		System.out.println("Student Details");
+		do {
+			PojoArrayList ar=new PojoArrayList();
+			ar.setRollNo(rollNo++);
+			System.out.println("Enter Student Name");
+			ar.setName(sc.next());
+			System.out.println("Enter Student Age");
+			ar.setAge(sc.nextInt());
+			System.out.println("Enter Student Marks");
+			ar.setMark(sc.nextDouble());
+			
+			s.add(ar);
+			
+			System.out.println("Do you want to Add Student Details?");
+			str=sc.next();
+		}while(str.equalsIgnoreCase("YES"));
+		
+		sc.nextLine();
+		
+		for(PojoArrayList obj:s) {
+			System.out.println("RollNo : "+obj.getRollNo());
+			System.out.println("Name : "+obj.getName());
+			System.out.println("Age : "+obj.getAge());
+			System.out.println("Mark : "+obj.getMark());
+		}
+		
+		
+		
+		do {
+			System.out.println("Select the operation to be performed");
+			int op=sc.nextInt();
+			
+			switch(op) {
+			case 0:
+				System.out.println("Iterate through all the element in an array list");
+				Iterator<PojoArrayList> i=s.iterator();
+				while(i.hasNext()) {
+					System.out.println(i.next());
+				}
+				break;
+				
+			case 1:
+				System.out.println("Insert an element into the array list at first position");
+				PojoArrayList ar=new PojoArrayList();
+				ar.setRollNo(rollNo++);
+				System.out.println("Enter Student Name");
+				ar.setName(sc.next());
+				System.out.println("Enter Student Age");
+				ar.setAge(sc.nextInt());
+				System.out.println("Enter Student Marks");
+				ar.setMark(sc.nextDouble());
+				
+				s.add(0,ar);
+				
+				
+				System.out.println(s);
+				
+				break;
+				
+			case 2:
+				System.out.println("Retrieve an element at a given index from an arraylist");
+				System.out.println("Enter the index of the element to be retrieved");
+				int n=sc.nextInt();
+				System.out.println(s.get(n));
+				break;
+			
+			case 3:
+				System.out.println("Update student details by given roll no");
+				System.out.println("Enter roll no");
+				int sno=sc.nextInt();
+				for(PojoArrayList obj:s) {
+					if(sno==obj.getRollNo()) {
+						obj.setName("Ron");
+						obj.setAge(17);
+						obj.setMark(77);
+					}
+				}
+				System.out.println(s);
+				break;
+				
+			case 4:
+				System.out.println("Remove the third element from an arraylist");
+				s.remove(2);
+				System.out.println(s);
+				break;
+				
+			case 5:
+				System.out.println("Search for the student info by roll no in an arraylist");
+				System.out.println("Enter the roll no");
+				int rno=sc.nextInt();
+				for(PojoArrayList obj:s) {
+					if(rno==obj.getRollNo()) {
+						System.out.println(obj);
+					}
+				}
+				break;
+				
+			case 6:
+				System.out.println("Sort a student list based on their names in ascending order");
+				ArrayList<PojoArrayList> sortName=(ArrayList<PojoArrayList>) s.stream().sorted(Comparator.comparing(PojoArrayList::getName)).collect(Collectors.toList());
+				System.out.println(s);
+				
+				
+			default:
+				System.out.println("Enter the operation range 0-20");
+				
+			}
+			
+			System.out.println("Do you want to Continue?");
+			str1=sc.next();
+			
+		}while(str1.equalsIgnoreCase("YES"));
+		
+
+	}
+
+}
