@@ -1,0 +1,26 @@
+package OOPS;
+
+interface I{
+	public void run();
+	public void print();
+}
+class A implements I{
+	public void run() {
+		System.out.println("run");
+	}
+	public void print() {
+		System.out.println("print");
+	}
+}
+
+public class InterfaceExample {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		A an=new A();
+		an.run();
+		
+
+	}
+
+}

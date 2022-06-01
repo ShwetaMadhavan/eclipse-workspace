@@ -42,9 +42,10 @@ public class StudentInfo {
 			switch(op) {
 			case 1:
 				sd.printStudentData(sd.getStudent());
+				sd.iterateElements(sd.getStudent());
 				break;
 			case 2:
-				sd.iterateElements();
+				//sd.insertElements();
 				break;
 			
 			default:

@@ -1,0 +1,31 @@
+package OOPS;
+
+public class ClassTypes {
+	public static void main(String[] args) {
+		ClassTypes ct=new ClassTypes();
+		ct.place();
+		Chennai c=ct.new Chennai();
+		c.Marina();
+		
+		
+	}
+	public void place(){
+		System.out.println("This is chennai");
+	}
+	
+	class Chennai {
+		public void Marina() {
+			System.out.println("This is Nested Class");
+		}	
+	}
+	public void sculptures(){
+		System.out.println("Sculptures in chennai");
+		class Beach{
+			public void ecr() {
+				System.out.println("There's one in ecr");
+			}
+		}
+		
+	}
+
+}

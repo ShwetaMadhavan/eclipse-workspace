@@ -1,0 +1,33 @@
+package OOPS;
+
+public class AbDemo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Iphone obj=new Iphone();
+		Samsung obj1=new Samsung();
+		show(obj);
+		
+		
+
+	}
+	public static void show(Iphone obj) {
+		obj.showConfig();
+	}
+	public static void show(Samsung obj) {
+		obj.showConfig();
+	}
+
+}
+
+ class Iphone{
+	public void showConfig() {
+		System.out.println("Iphone..");
+	}
+}
+
+ class Samsung{
+	public void showConfig() {
+		System.out.println("Samsung...");
+	}
+}

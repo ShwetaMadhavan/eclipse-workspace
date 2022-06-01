@@ -20,7 +20,7 @@ public class StudentDataCollection {
 	public void dataCollection() {
 		Scanner sc=new Scanner(System.in);
 		String str="";
-		System.out.println("Enter student details");
+		System.out.println("Enter student details");   
 		int rollNo=101;
 		do {
 			StudentDetails stu=new StudentDetails();
@@ -50,11 +50,23 @@ public class StudentDataCollection {
 		}
 	}
 	
-	public void iterateElements() {
+	public void iterateElements(ArrayList<StudentDetails> student) {
 		Iterator<StudentDetails> i=student.iterator();
 		while(i.hasNext()) {
 			System.out.println(i.next());
 		}
 	}
+	
+	/*
+	 * public void insertElements() { stu.setRollNo(rollNo++);
+	 * System.out.println("Enter Student Name"); student.setName(sc.next());
+	 * System.out.println("Enter Student Age"); student.setAge(sc.nextInt());
+	 * System.out.println("Enter Student Marks"); student.setMark(sc.nextDouble());
+	 * 
+	 * s.add(0,ar);
+	 * 
+	 * 
+	 * System.out.println(s); }
+	 */
 
 }

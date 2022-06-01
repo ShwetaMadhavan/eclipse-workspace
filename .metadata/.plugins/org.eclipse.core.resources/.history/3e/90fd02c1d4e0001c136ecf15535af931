@@ -1,0 +1,22 @@
+package OOPS;
+
+interface I{
+	void run();
+}
+
+class A implements I{
+	public void run() {
+		System.out.println("Running..");
+	}
+}
+
+public class Demo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+	A a=new A();
+	a.run();
+
+	}
+
+}

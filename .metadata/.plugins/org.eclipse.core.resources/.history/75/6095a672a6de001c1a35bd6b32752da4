@@ -1,0 +1,121 @@
+package AssignmentLinkedList;
+
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.Scanner;
+
+
+
+public class StudentDataCollection {
+	
+	LinkedList<PojoLinkedList> student=new LinkedList<PojoLinkedList>();
+	
+	public LinkedList<PojoLinkedList> getStudent() {
+		return student;
+	}
+
+	public void setStudent(LinkedList<PojoLinkedList> student) {
+		this.student = student;
+	}
+
+    Scanner sc=new Scanner(System.in);
+	int id=101;
+
+	public void dataCollection() {
+		//Scanner sc=new Scanner(System.in);
+		String str="";
+		System.out.println("Enter student details");
+		do {
+			PojoLinkedList stu=new PojoLinkedList();
+			stu.setId(id++);
+			System.out.println("Enter the name of the Student");
+			stu.setName(sc.next());
+			System.out.println("Enter Student Age");
+			stu.setAge(sc.nextByte());
+			System.out.println("Enter Student Gender");
+			stu.setGender(sc.next());
+			System.out.println("Enter mobile no");
+			stu.setMobileNumber(sc.nextLong());
+			
+			student.add(stu);
+			
+			System.out.println("Do you want to Add Student Details?");
+			str=sc.next();
+			
+		}while(str.equalsIgnoreCase("yes"));
+		
+	}
+
+	public void printStudentData(LinkedList<PojoLinkedList> student) {
+		// TODO Auto-generated method stub
+		for(PojoLinkedList obj:student) {
+			System.out.println("RollNo : "+obj.getId());
+			System.out.println("Name : "+obj.getName());
+			System.out.println("Age : "+obj.getAge());
+			System.out.println("Gender : "+obj.getGender());
+			System.out.println("Phone No :"+obj.getMobileNumber());
+		}
+		
+	}
+
+	public void iterateElements(LinkedList<PojoLinkedList> student) {
+		// TODO Auto-generated method stub
+		Iterator<PojoLinkedList> i=student.iterator();
+		while(i.hasNext()) {
+			System.out.println(i.next());
+		}
+		
+	}
+	
+	public void insertElements(LinkedList<PojoLinkedList> student) {
+		// TODO Auto-generated method stub
+		//Scanner sc=new Scanner(System.in);
+		PojoLinkedList ar=new PojoLinkedList();
+		ar.setId(id++);
+		System.out.println("Enter Student Name");
+		ar.setName(sc.next());
+		System.out.println("Enter Student Age");
+		ar.setAge(sc.nextByte());
+		System.out.println("Enter Student Marks");
+		ar.setGender(sc.next());
+		System.out.println("Enter phone no");
+		ar.setMobileNumber(sc.nextLong());
+		
+		student.add(0,ar);
+		
+		
+		System.out.println(student);
+	}
+
+	public void updateStudentDetails(LinkedList<PojoLinkedList> student) {
+		// TODO Auto-generated method stub
+		System.out.println("Enter roll no");
+		int sno=sc.nextInt();
+		for(PojoLinkedList obj:student) {
+			if(sno==obj.getId()) {
+				obj.setName("Ron");
+				obj.setAge((byte) 12);
+				obj.setGender("Male");
+				obj.setMobileNumber(9678354759l);
+			}
+		}
+		System.out.println(student);
+		
+	}
+
+	public void retrieveElements(LinkedList<PojoLinkedList> student2) {
+		// TODO Auto-generated method stub
+		//System.out.println("Retrieve an element at a given index from an arraylist");
+		System.out.println("Enter the id of the Student to be retrieved");
+		int sno=sc.nextInt();
+		for(PojoLinkedList obj:student) {
+			if(sno==obj.getId()) {
+	        	System.out.println(student.get(sno));
+			}}
+	}
+	
+
+
+	
+
+}
